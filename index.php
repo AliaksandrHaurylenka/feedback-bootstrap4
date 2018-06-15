@@ -14,6 +14,7 @@
 
 <div class="row justify-content-center">
   <form id="feedbackForm" class="col-6" method="post" action="/process/process.php" enctype="multipart/form-data" novalidate>
+<!--  <form class="col-6" method="post" action="/process/process.php" enctype="multipart/form-data" novalidate>-->
     <? include_once "input-blocks/_name-input.php"?>
 <!--    --><?// include_once "input-blocks/_email-input.php"?>
 <!--    --><?// include_once "input-blocks/_phone-input.php"?>
@@ -23,29 +24,29 @@
 <!--    --><?// include_once "input-blocks/_file-input.php"?>
 <!--    --><?// include_once "input-blocks/_radio-input.php"?>
 <!--    --><?// include_once "input-blocks/_check-input.php"?>
-<!--    --><?// include_once "input-blocks/_captcha.php"?>
+    <? include_once "input-blocks/_captcha.php"?>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 
     <!-- Индикация загрузки данных формы на сервер -->
-    <!--<div class="clearfix"></div>
+    <div class="clearfix"></div>
     <div class="progress" style="display:none; margin-top: 20px;">
       <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
         <span class="sr-only">0%</span>
       </div>
     </div>
-    <div class="clearfix"></div>-->
+    <div class="clearfix"></div>
   </form>
 
   <!-- Сообщение об успешной отправки формы -->
-<!--  <div class="alert alert-warning success-message d-none">-->
+  <div class="alert alert-warning success-message d-none">
     <!-- Сообщение об успешной отправки формы -->
-<!--    <div class="card-footer text-muted">-->
+    <div class="card-footer text-muted">
       <!-- Сообщение об успешной отправки формы -->
-<!--      Сообщение успешно отправлено. Нажмите на <a class="show-form" href="#">ссылку</a>, чтобы отправить ещё одно сообщение.-->
-<!--    </div>-->
-<!--  </div>-->
+      Сообщение успешно отправлено. Нажмите на <a class="show-form" href="#">ссылку</a>, чтобы отправить ещё одно сообщение.
+    </div>
+  </div>
 </div>
 
 
