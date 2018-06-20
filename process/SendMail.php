@@ -28,19 +28,36 @@ class SendMail
   }
 
   // валидация формы
-  //  function val($input, $min, $max){
   function val($input, $min, $max, $nameInput)
   {
+    $data['result'] = 'success';
     $text=$this->filter($input);
     $checkTextLength=$this->checkTextLength($text, $min, $max);
-//    return $checkTextLength;
     if (isset($input)){
       if (!$checkTextLength) { // проверка на количество символов в тексте
-        $data['result'] = 'error';
         $data[$nameInput] = "Поле <b>".$nameInput."</b> содержит недопустимое количество символов";
-//        var_dump($data);
+        $data['result'] = 'error';
       }
     }
+//    echo json_encode($data);
+//    var_dump($data);
+//    return json_encode($data);
+    return $data;
+  }
+
+
+
+
+    function length($input, $min, $max){
+      $text=$this->filter($input);
+      $checkTextLength=$this->checkTextLength($text, $min, $max);
+//      var_dump($checkTextLength);
+      return $checkTextLength;
+  }
+
+  function res($nameInput){
+    $data[$nameInput] = "Поле <b>".$nameInput."</b> содержит недопустимое количество символов";
+    $data['result'] = 'error';
     return $data;
   }
 

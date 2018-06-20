@@ -14,9 +14,11 @@
 
 <div class="row justify-content-center">
   <form id="feedbackForm" class="col-6" method="post" action="/process/process.php" enctype="multipart/form-data" novalidate>
+
+<!--    для var_damp-->
 <!--  <form class="col-6" method="post" action="/process/process.php" enctype="multipart/form-data" novalidate>-->
     <? include_once "input-blocks/_name-input.php"?>
-<!--    --><?// include_once "input-blocks/_email-input.php"?>
+    <? include_once "input-blocks/_email-input.php"?>
 <!--    --><?// include_once "input-blocks/_phone-input.php"?>
 <!--    --><?// include_once "input-blocks/_select-input.php"?>
 <!--    --><?// include_once "input-blocks/_multiselect-input.php"?>
@@ -24,7 +26,7 @@
 <!--    --><?// include_once "input-blocks/_file-input.php"?>
 <!--    --><?// include_once "input-blocks/_radio-input.php"?>
 <!--    --><?// include_once "input-blocks/_check-input.php"?>
-    <? include_once "input-blocks/_captcha.php"?>
+<!--    --><?// include_once "input-blocks/_captcha.php"?>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 
