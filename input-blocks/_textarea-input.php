@@ -1,5 +1,5 @@
 <div class="form-group has-feedback">
-  <label for="exampleTextarea">Example textarea</label>
+  <label for="exampleTextarea">Сообщение</label>
   <textarea name="message"
             class="form-control"
             id="exampleTextarea"

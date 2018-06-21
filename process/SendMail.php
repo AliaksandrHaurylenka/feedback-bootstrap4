@@ -12,10 +12,10 @@ class SendMail
   // функция для проверки количества символов в тексте
   function checkTextLength($text, $minLength, $maxLength)
   {
-    $result = false;
-    $textLength = mb_strlen($text, 'UTF-8');
-    if (($textLength >= $minLength) && ($textLength <= $maxLength)) {
-      $result = true;
+    $result=false;
+    $textLength=mb_strlen($text, 'UTF-8');
+    if(($textLength>=$minLength) && ($textLength<=$maxLength)){
+      $result=true;
     }
     return $result;
   }
@@ -23,31 +23,33 @@ class SendMail
   //фильтрация входящих данных
   function filter($input)
   {
-    $text = filter_var($input, FILTER_SANITIZE_STRING); // защита от XSS
+    $text=filter_var($input, FILTER_SANITIZE_STRING); // защита от XSS
     return $text;
   }
 
 
-//валидация форм
+  //валидация форм
+  //слово фильтруется, а потом проверяется на количество символов
   function length($input, $min, $max)
   {
-    $text = $this->filter($input);
-    $checkTextLength = $this->checkTextLength($text, $min, $max);
-//      var_dump($checkTextLength);
+    $text=$this->filter($input);
+    $checkTextLength=$this->checkTextLength($text, $min, $max);
+    //      var_dump($checkTextLength);
     return $checkTextLength;
   }
 
-  function res($nameInput,  $res, $text)
+  //вывод ошибки невалидной формы
+  function res($nameInput, $text)
   {
-    $data[$nameInput] = "<b>$nameInput</b>".$text;
-    $res;
+    $data[$nameInput]="<b>$nameInput</b>".$text;
+    $data['result']='error';
     return $data;
   }
 
 
   function bodyMail($search, $var, $template)
   {
-    $data = str_replace($search, isset($var) ? $var : '-', $template);
+    $data=str_replace($search, isset($var) ? $var : '-', $template);
     return $data;
   }
 
