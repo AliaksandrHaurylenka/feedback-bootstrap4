@@ -34,7 +34,6 @@ class SendMail
   {
     $text=$this->filter($input);
     $checkTextLength=$this->checkTextLength($text, $min, $max);
-    //      var_dump($checkTextLength);
     return $checkTextLength;
   }
 
