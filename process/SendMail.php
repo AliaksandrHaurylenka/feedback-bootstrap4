@@ -46,10 +46,23 @@ class SendMail
   }
 
 
+  //формирование шаблона письма
   function bodyMail($search, $var, $template)
   {
     $data=str_replace($search, isset($var) ? $var : '-', $template);
     return $data;
+  }
+
+
+  //отправка письма в файл
+  function sendFile($name){
+    $text = isset($name) ? $name : '-';
+    return $text;
+  }
+  //отправка письма в файл
+  function label($label, $name){
+    $output = $label . $this->sendFile($name) . "\n";
+    return $output;
   }
 
 }
