@@ -15,21 +15,19 @@
 <div class="row justify-content-center">
   <form id="feedbackForm" class="col-6" method="post" action="/process/process.php" enctype="multipart/form-data" novalidate>
 
-<!--    для var_damp-->
-<!--  <form class="col-6" method="post" action="/process/process.php" enctype="multipart/form-data" novalidate>-->
+    <!--    для var_damp-->
+    <!--  <form class="col-6" method="post" action="/process/process.php" enctype="multipart/form-data" novalidate>-->
     <? include_once "input-blocks/_name-input.php"?>
     <? include_once "input-blocks/_email-input.php"?>
     <? include_once "input-blocks/_phone-input.php"?>
     <? include_once "input-blocks/_select-input.php"?>
     <? include_once "input-blocks/_multiselect-input.php"?>
     <? include_once "input-blocks/_textarea-input.php"?>
-<!--    --><?// include_once "input-blocks/_file-input.php"?>
+    <!--    --><?// include_once "input-blocks/_file-input.php"?>
     <? include_once "input-blocks/_radio-input.php"?>
     <? include_once "input-blocks/_check-input.php"?>
     <? include_once "input-blocks/_captcha.php"?>
-
     <button type="submit" class="btn btn-primary">Submit</button>
-
     <!-- Индикация загрузки данных формы на сервер -->
     <div class="clearfix"></div>
     <div class="progress" style="display:none; margin-top: 20px;">
@@ -40,7 +38,6 @@
     </div>
     <div class="clearfix"></div>
   </form>
-
   <!-- Сообщение об успешной отправки формы -->
   <div class="alert alert-warning success-message d-none">
     <!-- Сообщение об успешной отправки формы -->
@@ -50,12 +47,9 @@
     </div>
   </div>
 </div>
-
-
 <script src="/vendors/jquery/jquery-3.2.1.min.js"></script>
 <script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
 <script src="/vendors/jgrowl/jquery.jgrowl.min.js"></script>
 <script src="/js/main.js"></script>
-
 </body>
 </html>
