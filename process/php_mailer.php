@@ -1,5 +1,8 @@
 <?php
 // отправляем письмо с помощью PHPMailer
+// включить файл PHPMailerAutoload.php
+require_once('../phpmailer/PHPMailerAutoload.php');
+
 $mail = new PHPMailer;
 
 

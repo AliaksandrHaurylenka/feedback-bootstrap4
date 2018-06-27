@@ -36,5 +36,5 @@ define('MAIL_SUBJECT', 'Сообщение с сайта Костюковка-С
 $bcc = ['aliaksandr.haurylenka@gmail.com'];// для массовой рассылки
 
 // настройки mail для информирования пользователя о доставке сообщения
-const MAIL_SUBJECT_CLIENT = 'Ваше сообщение доставлено';
-//define('MAIL_SUBJECT_CLIENT', 'Ваше сообщение доставлено');
+//const MAIL_SUBJECT_CLIENT = 'Ваше сообщение доставлено';
+define('MAIL_SUBJECT_CLIENT', 'Ваше сообщение доставлено');

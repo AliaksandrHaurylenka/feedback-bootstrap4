@@ -5,9 +5,10 @@ if ($data['result'] == 'success') {
   $email = $send->sendFile($email);
   $email = $send->sendFile($email);
   $phone = $send->sendFile($phone);
-  $select = $send->sendFile($_POST['select']);
-  $radio = $send->sendFile($_POST['optionsRadios']);
-  $check = $send->sendFile($_POST['check']);
+  $select = $send->sendFile($select);
+  $multiSelect = $send->sendFile($multiSelect);
+  $radio = $send->sendFile($radio);
+  $check = $send->sendFile($check);
   $message = $send->sendFile($message);
   $output = "---------------------------------" . "\n";
   $output .= date("d-m-Y H:i:s") . "\n";
@@ -15,6 +16,7 @@ if ($data['result'] == 'success') {
   $output .= $send->label("Адрес email: ", $email);
   $output .= $send->label("Телефон: ", $phone);
   $output .= $send->label("Select: ", $select);
+  $output .= $send->label("Multi Select: ", $multiSelect);
   $output .= $send->label("Radio: ", $radio);
   $output .= $send->label("Check: ", $check);
   $output .= $send->label("Сообщение: ", $message);

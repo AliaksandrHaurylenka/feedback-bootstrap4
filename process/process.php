@@ -8,7 +8,6 @@ session_start();
 // переменная, хранящая основной статус обработки формы
 $data['result'] = 'success';
 
-
 // обрабатывать будем только ajax запросы
 // для функции var_dump закомитить
 if (empty($_SERVER['HTTP_X_REQUESTED_WITH']) || $_SERVER['HTTP_X_REQUESTED_WITH'] != 'XMLHttpRequest') {
@@ -19,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
   exit();
 }
 
-
+//подключение класса для формирования и обработки сообщения
 require_once "SendMail.php";
 
 $send = new SendMail;
@@ -33,32 +32,28 @@ require_once ('file_valid.php');
 
 //Этап после валидации формы
 //присваивание переменных с input формы
+//для формирования тела сообщения
 $name = $send->filter($_POST['name']);
 $email = $send->filter($_POST['email']);
 $phone = $send->filter($_POST['phone']);
+$select = $send->filter($_POST['select']);
+$multiSelect = $send->filter($_POST['multiSelect']);
 $message = $send->filter($_POST['message']);
+$radio = $send->filter($_POST['radio']);
+$check = $send->filter($_POST['check']);
 
 // отправка формы (данных на почту)
 if ($data['result'] == 'success') {
-  // включить файл PHPMailerAutoload.php
-  require_once('../phpmailer/PHPMailerAutoload.php');
 
   //формируем тело письма
-  $bodyMail = file_get_contents('email.tpl'); // получаем содержимое email шаблона
+  require_once ('body_mail.php');
 
-
-  // выполняем замену плейсхолдеров реальными значениями
-  $bodyMail = str_replace('%email.title%', MAIL_SUBJECT, $bodyMail);
-  $bodyMail = str_replace('%email.date%', date('d.m.Y H:i'), $bodyMail);
-  $bodyMail = $send->bodyMail('%email.nameuser%', $name, $bodyMail);
-  $bodyMail = $send->bodyMail('%email.message%', $message, $bodyMail);
-  $bodyMail = $send->bodyMail('%email.emailuser%', $email, $bodyMail);
-
-  require_once('inc_php_mailer.php');
+  //обработка письма
+  require_once('php_mailer.php');
 }
 
+//запись сообщения в файл
 require_once('write-in-file.php');
-
 
 // сообщаем результат клиенту
 echo json_encode($data);
