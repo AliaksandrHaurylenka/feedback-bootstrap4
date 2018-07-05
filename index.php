@@ -23,7 +23,7 @@
     <? include_once "input-blocks/_select-input.php"?>
     <? include_once "input-blocks/_multiselect-input.php"?>
     <? include_once "input-blocks/_textarea-input.php"?>
-    <!--    --><?// include_once "input-blocks/_file-input.php"?>
+    <? include_once "input-blocks/_file-input.php"?>
     <? include_once "input-blocks/_radio-input.php"?>
     <? include_once "input-blocks/_check-input.php"?>
     <? include_once "input-blocks/_captcha.php"?>

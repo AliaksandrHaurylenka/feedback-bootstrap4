@@ -21,7 +21,7 @@ if (isset($_FILES['attachment'])) {
       }
       // проверяем размер файла
       if ($resultCheckExtension && ($fileSize > MAX_FILE_SIZE)) {
-        $data['info'][] = 'Размер файла ' . $fileName . ' превышает 512 Кбайт';
+        $data['info'][] = 'Размер файла ' . $fileName . ' превышает 3 Мбайт';
         $data['result'] = 'error';
       }
     }

@@ -9,7 +9,8 @@
 $startPath = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . '/';
 
 // максимальный размер файла 512Кбайт (512*1024=524288)
-const MAX_FILE_SIZE = 524288;
+//const MAX_FILE_SIZE = 524288;
+const MAX_FILE_SIZE = 3145728;
 //define('MAX_FILE_SIZE', 524288);
 
 // директория для хранения загруженных файлов

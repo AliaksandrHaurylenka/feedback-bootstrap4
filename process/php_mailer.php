@@ -19,6 +19,12 @@ foreach($bcc as $mail_list)
 }
 $mail->addCustomHeader('Precedence', 'bulk');
 
+// прикрепление файлов к письму
+if (isset($attachments)) {
+  foreach ($attachments as $attachment) {
+    $mail->addAttachment($attachment);
+  }
+}
 
 // отправляем письмо
 if (!$mail->send()) {

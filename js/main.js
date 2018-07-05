@@ -16,7 +16,8 @@ $(function(){
     // количество элементов input для загрузки файлов
     this.countFiles=parameters['countFiles'] || 5;
     // максимальный размер файла для загрузки (по умолчанию 512 Кбайт)
-    this.maxSizeFile=parameters['maxSizeFile'] || 524288;
+    // this.maxSizeFile=parameters['maxSizeFile'] || 524288;
+    this.maxSizeFile=parameters['maxSizeFile'] || 3145728;
     // допустимые разрешения файлов
     this.validFileExtensions=parameters['validFileExtensions'] || ['jpg', 'jpeg', 'bmp', 'gif', 'png'];
     // флажок о принятии пользовательского соглашения перед отправкой формы

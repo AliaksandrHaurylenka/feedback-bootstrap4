@@ -1,5 +1,5 @@
 <div class="form-group">
   <label for="exampleInputFile">File input</label>
-  <input type="file" name="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-  <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+  <input type="file" name="attachment[]" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+  <p class="small text-muted">jpg, jpeg, bmp, gif, png (до 3 Мбайт)</p>
 </div>
