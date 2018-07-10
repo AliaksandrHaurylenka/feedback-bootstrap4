@@ -12,43 +12,47 @@
 </head>
 <body>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center my-4">
   <form id="feedbackForm" class="col-6" method="post" action="/process/process.php" enctype="multipart/form-data" novalidate>
-
     <!--    для var_damp-->
     <!--  <form class="col-6" method="post" action="/process/process.php" enctype="multipart/form-data" novalidate>-->
-    <? include_once "input-blocks/_name-input.php"?>
-    <? include_once "input-blocks/_email-input.php"?>
-    <? include_once "input-blocks/_phone-input.php"?>
-    <? include_once "input-blocks/_select-input.php"?>
-    <? include_once "input-blocks/_multiselect-input.php"?>
-    <? include_once "input-blocks/_textarea-input.php"?>
-    <? include_once "input-blocks/_file-input.php"?>
-    <? include_once "input-blocks/_radio-input.php"?>
-    <? include_once "input-blocks/_check-input.php"?>
-    <? include_once "input-blocks/_captcha.php"?>
+    <div class="card">
+      <div class="card-header">Обратная связь</div>
+      <div class="card-block">
+        <? include_once "input-blocks/_name-input.php"?>
+        <? include_once "input-blocks/_email-input.php"?>
+        <? include_once "input-blocks/_phone-input.php"?>
+        <? include_once "input-blocks/_select-input.php"?>
+        <? include_once "input-blocks/_multiselect-input.php"?>
+        <? include_once "input-blocks/_textarea-input.php"?>
+        <? include_once "input-blocks/_file-input.php"?>
+        <? include_once "input-blocks/_radio-input.php"?>
+        <? include_once "input-blocks/_check-input.php"?>
+        <? include_once "input-blocks/_captcha.php"?>
 
 
-    <!-- Пользовательское солашение -->
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" name="agree"> Нажимая кнопку, я принимаю условия
-        <a href="#">Пользовательского соглашения</a> и даю своё согласие на обработку моих
-        персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О
-        персональных
-        данных».
-      </label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <!-- Индикация загрузки данных формы на сервер -->
-    <div class="clearfix"></div>
-    <div class="progress" style="display:none; margin-top: 20px;">
-      <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-           aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
-        <span class="sr-only">0%</span>
+        <!-- Пользовательское солашение -->
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="agree"> Нажимая кнопку, я принимаю условия
+            <a href="#">Пользовательского соглашения</a> и даю своё согласие на обработку моих
+            персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О
+            персональных
+            данных».
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- Индикация загрузки данных формы на сервер -->
+        <div class="clearfix"></div>
+        <div class="progress" style="display:none; margin-top: 20px;">
+          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+               aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+            <span class="sr-only">0%</span>
+          </div>
+        </div>
+        <div class="clearfix"></div>
       </div>
     </div>
-    <div class="clearfix"></div>
   </form>
   <!-- Сообщение об успешной отправки формы -->
   <div class="alert alert-warning success-message d-none">
