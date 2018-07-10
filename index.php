@@ -27,6 +27,18 @@
     <? include_once "input-blocks/_radio-input.php"?>
     <? include_once "input-blocks/_check-input.php"?>
     <? include_once "input-blocks/_captcha.php"?>
+
+
+    <!-- Пользовательское солашение -->
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="agree"> Нажимая кнопку, я принимаю условия
+        <a href="#">Пользовательского соглашения</a> и даю своё согласие на обработку моих
+        персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О
+        персональных
+        данных».
+      </label>
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <!-- Индикация загрузки данных формы на сервер -->
     <div class="clearfix"></div>
