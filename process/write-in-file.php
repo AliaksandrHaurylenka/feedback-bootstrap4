@@ -6,7 +6,6 @@ if ($data['result'] == 'success') {
   $email = $send->sendFile($email);
   $phone = $send->sendFile($phone);
   $select = $send->sendFile($select);
-  $multiSelect = $send->sendFile($multiSelect);
   $radio = $send->sendFile($radio);
   $check = $send->sendFile($check);
   $message = $send->sendFile($message);
@@ -16,7 +15,12 @@ if ($data['result'] == 'success') {
   $output .= $send->label("Адрес email: ", $email);
   $output .= $send->label("Телефон: ", $phone);
   $output .= $send->label("Select: ", $select);
-  $output .= $send->label("Multi Select: ", $multiSelect);
+  if (isset($multiSelect)) {
+    $output .= "Multi Select: " . "\n";
+    foreach ($multiSelect as $select) {
+      $output .= $select . "\n";
+    }
+  }
   $output .= $send->label("Radio: ", $radio);
   $output .= $send->label("Check: ", $check);
   $output .= $send->label("Сообщение: ", $message);

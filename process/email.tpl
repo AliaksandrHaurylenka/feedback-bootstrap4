@@ -1,9 +1,8 @@
-<table style="background-color: #f1f1f1; width:100%; align="
-       center" width="100%" border="0" cellpadding="0" cellspacing="0">
+<table style="background-color: #f1f1f1; width:100%;" align="center" border="0" cellpadding="0" cellspacing="0">
 <tbody>
 <tr>
     <td align="center" style="vertical-align:top;padding:30px 0;text-align:center">
-        <table style="text-align:left; width:680px; margin:0 auto; font-size:14px; border-spacing:0px">
+        <table style="text-align:left; width:680px; margin:0 auto; font-size:14px; border-spacing:0">
             <tbody>
             <tr>
                 <td bgcolor="#fff" style="padding: 15px;">

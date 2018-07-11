@@ -1,4 +1,7 @@
 <?php
+//временная зона
+date_default_timezone_set('Europe/Moscow');
+
 // подключаем файл настроек
 require_once dirname(__FILE__) . '/process_settings.php';
 
@@ -20,24 +23,24 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
 //подключение класса для формирования и обработки сообщения
 require_once "SendMail.php";
-
 $send = new SendMail;
 
-//input формы для валидации
+//валидация полей
 require_once ('input-valid.php');
 
 //валидация загружаемых файлов
 require_once ('file_valid.php');
 
 
-//Этап после валидации формы
-//присваивание переменных с input формы
+//Этап после валидации форм
+//присваивание переменных с input полей
 //для формирования тела сообщения
 $name = $send->filter($_POST['name']);
 $email = $send->filter($_POST['email']);
 $phone = $send->filter($_POST['phone']);
 $select = $send->filter($_POST['select']);
-$multiSelect = $send->filter($_POST['multiSelect']);
+//$multiSelect = $send->filter($_POST['multiSelect']);
+$multiSelect = $_POST['multiSelect'];
 $message = $send->filter($_POST['message']);
 $radio = $send->filter($_POST['radio']);
 $check = $send->filter($_POST['check']);
@@ -55,6 +58,6 @@ if ($data['result'] == 'success') {
 //запись сообщения в файл
 require_once('write-in-file.php');
 
-// сообщаем результат клиенту
+//сообщаем результат клиенту
 echo json_encode($data);
 
